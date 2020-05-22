@@ -98,7 +98,8 @@ def hit_or_stand(deck,hand):
     global playing
 
     while True:
-        x = input("Would you like to Hit or Stand? Enter 'h' or 's' ")
+        x = input("Would you like to Hit or Stand? Enter h or s: ")
+        print("\n")
 
         if x[0].lower() == 'h':
             hit(deck,hand)  # hit() function defined above
@@ -114,16 +115,21 @@ def hit_or_stand(deck,hand):
 
 
 def show_some(player,dealer):
-    print("\nDealer's Hand:")
-    print(" <card hidden>")
-    print('',dealer.cards[1])
-    print("\nPlayer's Hand:", player.cards[0],'\n ')
+    print("Dealer's Hand:")
+    print("<XXXXX card hidden XXXXX>")
+    print(dealer.cards[1])
+
+    print("\nPlayer's Hand:")
+    print(*player.cards, sep='\n')
+    print("                           Player's Total>>>>>>>",player.value)
 
 def show_all(player,dealer):
-    print("\nDealer's Hand:", dealer.cards[0],'\n ')
-    print("Dealer's Hand =",dealer.value)
-    print("\nPlayer's Hand:", player.cards[0],'\n ')
-    print("Player's Hand =",player.value)
+    print("_________________________________________\n\nDealer's Hand:")
+    print(*dealer.cards, sep='\n')
+    print("                           Dealer's Total>>>>>>>",dealer.value)
+    print("\nPlayer's Hand:")
+    print(*player.cards, sep='\n')
+    print("                           Player's Total>>>>>>>",player.value)
 
 def player_busts(player,dealer,chips):
     print("Player busts!")
@@ -147,8 +153,7 @@ def push(player,dealer):
 # GAMEPLAY!
 
 while True:
-    print('Welcome to BlackJack! Get as close to 21 as you can without going over!\n\
-    Dealer hits until she reaches 17. Aces count as 1 or 11.')
+    print('\n_________________________________________\n\nWelcome to BlackJack! Get as close to 21 as you can without going over!\n Aces count as 1 or 11.')
 
     # Create & shuffle the deck, deal two cards to each player
     deck = Deck()
@@ -212,5 +217,5 @@ while True:
         playing=True
         continue
     else:
-        print("Thanks for playing!")
+        print("Thanks for playing!\n_________________________________________\n")
         break
