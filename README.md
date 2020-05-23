@@ -3,7 +3,9 @@ Black Jack game made using Python
 
 Players are each dealt two cards, face up or down depending on the casino and the table. The dealer is also dealt two cards, normally one up (exposed) and one down (hidden). 
 The value of cards two through ten is their pip value (2 through 10). Face cards (Jack, Queen, and King) are all worth ten.
-Aces can be worth one or eleven. A hand's value is the sum of the card values. Players are allowed to draw additional cards to improve their hands. The value of the ace will become one to prevent the hand from exceeding 21.
+Aces can be worth one or eleven. A hand's value is the sum of the card values. Players are allowed to draw additional cards("HIT") to improve their hands. The value of the ace will become one to prevent the hand from exceeding 21.
+
+You can either HIT(ask for additional card to make your hand value closer to 21) or STAND(stop asking for cards and allow dealer to play their turn).
 
 Once all the players have completed their hands, it is the dealer's turn. The dealer hand will not be completed if all players have either busted or received blackjacks. The dealer then reveals the hidden card. You are betting that you have a better hand than the dealer. The better hand is the hand where the sum of the card values is closer to 21 without exceeding 21. 
 The detailed outcome of the hand follows:
